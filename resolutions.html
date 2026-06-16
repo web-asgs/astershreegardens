@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Consent & Resolutions — Aster Shree Gardens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="tricolor-bar"></div>
+    <div class="header-top">
+      <div class="logo-area">
+        <div class="logo-circle">🌿</div>
+        <div>
+          <div class="site-title">Aster Shree Gardens</div>
+          <div class="site-subtitle">Welfare Association, Serampore</div>
+        </div>
+      </div>
+    </div>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Home</a></li>
+        <li><a href="notices.html">📋 Notices</a></li>
+        <li><a href="meetings.html">📝 Meeting Summaries</a></li>
+        <li><a href="resolutions.html">✅ Consent & Resolutions</a></li>
+        <li><a href="issues.html">🔧 Issues Tracker</a></li>
+        <li><a href="events.html">🎉 Events</a></li>
+        <li><a href="community.html">💬 Community Wall</a></li>
+      </ul>
+    </nav>
+    <div class="tricolor-bar"></div>
+  </header>
+  <main>
+    <h2 class="page-title">✅ Consent & Resolutions</h2>
+    <p class="page-desc">All passed resolutions and consent records by the Association. Status: Passed | Pending | Rejected</p>
+    
+  <div class="admin-bar" id="adminBar">
+    <span class="admin-status" id="adminStatus">🔐 Admin access:</span>
+    <div class="pin-input-area" id="pinArea">
+      <input type="password" id="adminPin" placeholder="Enter PIN" maxlength="6" onkeydown="if(event.key==='Enter')verifyPin()">
+      <button class="btn-verify" onclick="verifyPin()">Verify</button>
+    </div>
+    <span id="pinError" style="color:#e53935;font-size:0.85rem;"></span>
+    <button class="btn-post" id="postBtn" style="display:none;" onclick="togglePostPanel()">+ Post New Entry</button>
+  </div>
+    <div class="post-panel" id="postPanel">
+      <h3>✅ Add Resolution</h3>
+      <div class="form-row"><label>Topic *</label><input type="text" id="rTopic" placeholder="Resolution topic..."></div>
+      <div class="form-row"><label>Date *</label><input type="date" id="rDate"></div>
+      <div class="form-row"><label>Status</label>
+        <select id="rStatus">
+          <option value="Passed">Passed</option>
+          <option value="Pending">Pending</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Details</label><textarea id="rDetails" placeholder="Resolution details..."></textarea></div>
+      <div class="form-actions">
+        <button class="btn-submit" id="submitBtn" onclick="submitResolution()">Save Resolution</button>
+        <button class="btn-cancel" onclick="cancelPost()">Cancel</button>
+      </div>
+    </div>
+    <div id="resolutionsContainer"><div class="loading"><div class="spinner"></div><p>Loading...</p></div></div>
+  </main>
+  <footer>
+    <div class="tricolor-bar"></div>
+    <p style="margin-top:14px;">© 2026 Aster Shree Gardens Welfare Association, Serampore</p>
+    <p style="margin-top:6px;">Building a better community together 🇮🇳</p>
+  </footer>
+  <script src="app.js"></script>
+  <script>
+    document.querySelectorAll('nav a').forEach(a => { if(a.href.includes('resolutions')) a.classList.add('active'); });
+    loadResolutions();
+  </script>
+</body>
+</html>
