@@ -4,7 +4,7 @@
 :root {
     --primary: #166534;
     --primary-light: #15803d;
-    --primary-dark: #14532d;
+    --primary-dark: #14532d;h
     --primary-50: #f0fdf4;
     --primary-100: #dcfce7;
     --accent: #f59e0b;
@@ -223,7 +223,7 @@ nav ul li a.active {
     clip-path: ellipse(60% 100% at 50% 100%);
 }
 
-.hero h1, .page-title {
+.hero h1 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(1.6rem, 4vw, 2.5rem);
     font-weight: 800;
@@ -236,7 +236,7 @@ nav ul li a.active {
     z-index: 1;
 }
 
-.hero p, .page-desc {
+.hero p {
     color: rgba(255,255,255,0.82);
     font-size: 1rem;
     max-width: 540px;
@@ -248,8 +248,8 @@ nav ul li a.active {
     padding-left: 0;
 }
 
-/* For inner pages where hero has page-title/page-desc classes */
-.hero .page-title { color: white; border-left: none; padding-left: 0; }
+/* Standalone .page-title and .page-desc (dark text on white bg) */
+.page-title { color: var(--gray-900); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.4px; line-height: 1.2; margin-bottom: 8px; } .page-desc { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; } .hero .page-title { color: white; border-left: none; padding-left: 0; } .hero .page-desc { color: rgba(255,255,255,0.82); padding-left: 0; }
 
 /* ===== MAIN CONTENT ===== */
 main {
