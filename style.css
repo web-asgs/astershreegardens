@@ -934,13 +934,13 @@ footer a:hover { color: white; }
       transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile nav overlay backdrop */
-.nav-menu.nav-open::before {
+/* Mobile nav overlay backdrop - handled by JS overlay div */
+.nav-overlay {
       content: '';
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(2px);
+      backdrop-filter: none;
       z-index: 98;
       animation: fadeIn 0.2s ease;
 }
